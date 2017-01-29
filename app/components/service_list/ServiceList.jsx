@@ -2,40 +2,22 @@
 
 import React from 'react';
 
-import { getConfig, setConfig } from '../../models/app_config';
-import type { AppConfig } from '../../models/app_config';
-import Setup from '../setup/';
-import Services from './Services';
+import type { ServiceConfig } from '../../service_config';
 
-import serviceConfig from './serviceConfig';
-
-type Props = {};
+type Props = {
+  services: Array<ServiceConfig>
+}
 
 export default class ServiceList extends React.Component {
-  state: {
-    config: ?AppConfig
-  }
-
-  constructor(props: Props) {
-    super(props);
-    this.state = {
-      config: getConfig()
-    };
-  }
-
-  storeConfig(config: AppConfig) {
-    setConfig(config);
-    this.setState({ config: config });
-  }
+  props: Props
 
   render() {
-    if (this.state.config) {
-      return <Services
-        basePath={this.state.config.base_path}
-        services={serviceConfig}
-      />;
-    } else {
-      return <Setup onSetupDone={this.storeConfig.bind(this)}/>;
-    }
+    return <ul className="list-group">
+      {this.props.services.map((service) =>
+        <li className="list-group-item">
+          <p>{service.name}</p>
+        </li>
+      )}
+    </ul>;
   }
 }
