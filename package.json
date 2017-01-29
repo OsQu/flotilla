@@ -1,23 +1,19 @@
 {
-  "name": "electron-quick-start",
-  "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "name": "Flotilla",
+  "version": "0.0.1",
+  "description": "Flotilla handles installation and usage of different services",
   "main": "bootstrap.js",
   "scripts": {
     "start": "electron .",
     "test": "mocha --compilers js:babel-register 'app/**/*.spec.js?(x)'",
     "test-debug": "mocha --inspect --debug-brk --compilers js:babel-register 'app/**/*.spec.js?(x)'"
   },
-  "repository": "https://github.com/electron/electron-quick-start",
+  "repository": "https://github.com/OsQu/flotilla",
   "keywords": [
-    "Electron",
-    "quick",
-    "start",
-    "tutorial",
-    "demo"
+    "microservices"
   ],
-  "author": "GitHub",
-  "license": "CC0-1.0",
+  "author": "OsQu",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^3.5.0",
     "electron": "^1.4.1",
