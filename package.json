@@ -5,8 +5,8 @@
   "main": "bootstrap.js",
   "scripts": {
     "start": "electron .",
-    "test": "mocha --compilers js:babel-register 'app/**/*.spec.js?(x)'",
-    "test-debug": "mocha --inspect --debug-brk --compilers js:babel-register 'app/**/*.spec.js?(x)'"
+    "test": "mocha -r jsdom-global/register --compilers js:babel-register 'app/**/*.spec.js?(x)'",
+    "test-debug": "mocha -r jsdom-global/register --inspect --debug-brk --compilers js:babel-register 'app/**/*.spec.js?(x)'"
   },
   "repository": "https://github.com/OsQu/flotilla",
   "keywords": [
@@ -15,12 +15,16 @@
   "author": "OsQu",
   "license": "MIT",
   "devDependencies": {
+    "babel-plugin-rewire": "^1.0.0",
     "chai": "^3.5.0",
     "electron": "^1.4.1",
     "enzyme": "^2.7.1",
     "flow-bin": "^0.37.4",
+    "jsdom": "^9.9.1",
+    "jsdom-global": "^2.1.1",
     "mocha": "^3.2.0",
-    "react-addons-test-utils": "^15.4.2"
+    "react-addons-test-utils": "^15.4.2",
+    "sinon": "^1.17.7"
   },
   "dependencies": {
     "babel-preset-es2015": "^6.22.0",
